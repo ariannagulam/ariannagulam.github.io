@@ -1,0 +1,350 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Standorte – Urban Ranch</title><meta name="description" content="Urban Ranch Standorte: Skyline Plaza und Bergerstraße in Frankfurt sowie Darmstadt – Adressen, Öffnungszeiten und Live-Status."><meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext y=%27.9em%27 font-size=%2790%27%3E%F0%9F%8D%94%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800&family=Josefin+Sans:wght@600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+
+<style>
+.ov-root{
+  --bg:#1A0E07;
+  --card:#241206;
+  --line:rgba(255,255,255,.08);
+  --orange:#E8650F;
+  --gold:#F5C97A;
+  --live:#8FE24D;
+  --muted:rgba(255,255,255,.5);
+  --muted2:rgba(255,255,255,.32);
+}
+.ov-root{background:var(--bg);color:#fff;font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.ov-root img{max-width:100%;display:block}
+.ov-root a{color:inherit}
+.ov-wrap{max-width:1180px;margin:0 auto;padding:0 32px}
+@media(max-width:640px){.ov-wrap{padding:0 18px}}
+.ov-ticker-wrap{overflow:hidden;border-bottom:1px solid var(--line);position:relative;z-index:2}
+.ov-ticker{display:flex;gap:32px;animation:ov-tick 24s linear infinite;width:max-content;padding:11px 0}
+.ov-ti{font-size:11px;font-weight:700;letter-spacing:.1em;color:rgba(245,201,122,.55);text-transform:uppercase;white-space:nowrap;display:flex;align-items:center;gap:9px}
+.ov-ti-dot{width:4px;height:4px;border-radius:50%;background:rgba(232,101,15,.6);flex-shrink:0}
+@keyframes ov-tick{to{transform:translateX(-50%)}}
+.ov-hero{padding:56px 0 40px;text-align:center;position:relative;overflow:hidden}
+.ov-hero-blob{position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none;z-index:0;animation:ov-blob-float 8s ease-in-out infinite}
+.ov-hb1{width:340px;height:340px;top:-110px;left:6%;background:rgba(232,101,15,.12)}
+.ov-hb2{width:280px;height:280px;bottom:-90px;right:6%;background:rgba(245,201,122,.09);animation-delay:3s}
+.ov-hb3{width:200px;height:200px;top:20%;right:30%;background:rgba(95,168,91,.06);animation-delay:5s}
+@keyframes ov-blob-float{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-18px) scale(1.08)}}
+.ov-hero-emoji{position:absolute;font-size:28px;opacity:.35;z-index:0;animation:ov-emoji-spin 11s linear infinite}
+.ov-he1{top:14%;left:8%;animation-duration:13s}
+.ov-he2{top:20%;right:10%;animation-duration:10s;animation-direction:reverse}
+.ov-he3{bottom:14%;left:14%;font-size:20px;animation-duration:9s}
+@keyframes ov-emoji-spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+.ov-hero-inner{position:relative;z-index:1}
+.ov-ey{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:14px;opacity:0;animation:ov-h-in .6s ease .05s forwards}
+.ov-t1{font-family:'Bebas Neue',Impact,sans-serif;font-size:clamp(42px,7vw,78px);color:#fff;line-height:.9;opacity:0;animation:ov-h-in .6s ease .15s forwards}
+.ov-t2{font-family:'Bebas Neue',Impact,sans-serif;font-size:clamp(42px,7vw,78px);-webkit-text-stroke:1.5px var(--orange);-webkit-text-fill-color:transparent;color:transparent;line-height:.9;margin-bottom:16px;opacity:0;animation:ov-h-in .6s ease .25s forwards}
+.ov-sub{font-size:15px;color:var(--muted);max-width:520px;margin:0 auto 28px;line-height:1.7;opacity:0;animation:ov-h-in .6s ease .35s forwards}
+@keyframes ov-h-in{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.ov-live-counter{
+  display:inline-flex;align-items:center;gap:10px;
+  background:var(--card);border:1px solid rgba(143,226,77,.25);
+  border-radius:100px;padding:9px 20px;
+  font-family:'JetBrains Mono',monospace;font-size:12.5px;font-weight:700;
+  opacity:0;animation:ov-h-in .6s ease .45s forwards;
+}
+.ov-live-counter-dot{width:8px;height:8px;border-radius:50%;background:var(--live);animation:ov-dot-pulse-big 1.8s ease-in-out infinite}
+@keyframes ov-dot-pulse-big{0%,100%{box-shadow:0 0 0 0 rgba(143,226,77,.6)}50%{box-shadow:0 0 0 7px rgba(143,226,77,0)}}
+.ov-live-counter b{color:var(--live)}
+.ov-stats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:36px 0 8px}
+@media(max-width:700px){.ov-stats-row{grid-template-columns:1fr}}
+.ov-stat-card{
+  background:var(--card);border:1px solid var(--line);border-radius:16px;
+  padding:20px;text-align:center;
+  opacity:0;transform:translateY(16px);animation:ov-card-in .55s ease forwards;
+  transition:transform .25s,border-color .25s;
+}
+.ov-stat-card:hover{transform:translateY(-4px);border-color:rgba(232,101,15,.35)}
+.ov-stat-card:nth-child(1){animation-delay:.1s}
+.ov-stat-card:nth-child(2){animation-delay:.2s}
+.ov-stat-card:nth-child(3){animation-delay:.3s}
+.ov-stat-icon{font-size:24px;margin-bottom:8px;display:block}
+.ov-stat-title{font-family:'Bebas Neue',Impact,sans-serif;font-size:20px;color:#fff;line-height:1;margin-bottom:4px}
+.ov-stat-desc{font-size:11.5px;color:var(--muted2);line-height:1.4}
+.ov-locations{padding:32px 0 72px}
+.ov-loc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+@media(max-width:900px){.ov-loc-grid{grid-template-columns:1fr;max-width:460px;margin:0 auto}}
+.ov-loc-card{
+  background:var(--card);border-radius:24px;overflow:hidden;
+  border:1px solid var(--line);position:relative;
+  opacity:0;transform:translateY(24px);animation:ov-card-in .6s ease forwards;
+  transition:transform .3s,box-shadow .3s,border-color .3s;
+}
+.ov-loc-card:hover{transform:translateY(-10px) rotate(-.4deg);box-shadow:0 20px 44px rgba(0,0,0,.4)}
+.ov-loc-card:nth-child(1){animation-delay:.15s}
+.ov-loc-card:nth-child(2){animation-delay:.3s}
+.ov-loc-card:nth-child(3){animation-delay:.45s}
+@keyframes ov-card-in{to{opacity:1;transform:translateY(0)}}
+.ov-loc-strip{height:5px;width:100%;position:relative;overflow:hidden}
+.ov-loc-strip::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.5),transparent);
+  animation:ov-strip-shine 3s ease-in-out infinite;
+}
+@keyframes ov-strip-shine{0%{transform:translateX(-100%)}50%,100%{transform:translateX(100%)}}
+.ov-loc-strip.ov-orange{background:linear-gradient(90deg,#E8650F,#F5C97A)}
+.ov-loc-strip.ov-green{background:linear-gradient(90deg,#5FA85B,#8FE24D)}
+.ov-loc-strip.ov-yellow{background:linear-gradient(90deg,#F5C043,#FFD666)}
+.ov-loc-photo{position:relative;width:100%;aspect-ratio:4/3;overflow:hidden;background:linear-gradient(135deg,rgba(255,255,255,.05),#1A0E07)}
+.ov-loc-photo img{width:100%;height:100%;object-fit:cover;transition:transform .45s}
+.ov-loc-card:hover .ov-loc-photo img{transform:scale(1.08)}
+.ov-loc-photo::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.65) 0%,transparent 55%)}
+.ov-loc-ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:44px}
+.ov-loc-status{
+  position:absolute;top:12px;left:12px;z-index:2;
+  display:flex;align-items:center;gap:6px;
+  background:rgba(0,0,0,.55);backdrop-filter:blur(6px);
+  padding:5px 12px;border-radius:100px;font-size:10.5px;font-weight:700;
+}
+.ov-loc-status-dot{width:6px;height:6px;border-radius:50%;background:var(--live);animation:ov-dot-pulse 2s ease-in-out infinite}
+.ov-loc-status-dot.ov-closed{background:rgba(255,255,255,.3);animation:none}
+@keyframes ov-dot-pulse{0%,100%{box-shadow:0 0 0 0 rgba(143,226,77,.5)}50%{box-shadow:0 0 0 5px rgba(143,226,77,0)}}
+.ov-loc-rating{
+  position:absolute;top:12px;right:12px;z-index:2;
+  background:rgba(0,0,0,.55);backdrop-filter:blur(6px);
+  padding:5px 12px;border-radius:100px;font-size:10.5px;font-weight:700;
+  color:var(--gold);
+}
+.ov-loc-hours-badge{
+  position:absolute;bottom:12px;left:12px;z-index:2;
+  background:rgba(0,0,0,.6);backdrop-filter:blur(6px);
+  padding:5px 12px;border-radius:100px;font-size:10px;font-weight:600;
+  color:rgba(255,255,255,.75);font-family:'JetBrains Mono',monospace;
+}
+.ov-loc-body{padding:22px 22px 24px}
+.ov-loc-name{font-family:'Bebas Neue',Impact,sans-serif;font-size:26px;color:#fff;line-height:1;margin-bottom:6px}
+.ov-loc-addr{font-size:12px;color:var(--muted);margin-bottom:14px;line-height:1.5}
+.ov-loc-chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
+.ov-loc-chip{
+  font-size:10px;font-weight:600;color:var(--muted2);
+  background:rgba(255,255,255,.05);border:1px solid var(--line);
+  border-radius:100px;padding:4px 10px;
+  opacity:0;animation:ov-chip-in .4s ease forwards;
+}
+.ov-loc-chip:nth-child(1){animation-delay:.5s}
+.ov-loc-chip:nth-child(2){animation-delay:.6s}
+.ov-loc-chip:nth-child(3){animation-delay:.7s}
+@keyframes ov-chip-in{to{opacity:1}}
+.ov-loc-btn{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  width:100%;padding:12px;border-radius:100px;
+  font-size:13px;font-weight:700;text-decoration:none;color:#fff;
+  transition:all .22s;
+}
+.ov-loc-btn.ov-orange{background:#E8650F}
+.ov-loc-btn.ov-orange:hover{background:#FF7A1F;transform:translateY(-2px);box-shadow:0 6px 18px rgba(232,101,15,.4)}
+.ov-loc-btn.ov-green{background:#5FA85B}
+.ov-loc-btn.ov-green:hover{background:#74C46E;transform:translateY(-2px);box-shadow:0 6px 18px rgba(95,168,91,.4)}
+.ov-loc-btn.ov-yellow{background:#F5C043;color:#2E1508}
+.ov-loc-btn.ov-yellow:hover{background:#FFD666;transform:translateY(-2px);box-shadow:0 6px 18px rgba(245,192,67,.4)}
+.ov-bottom-cta{
+  margin-top:44px;text-align:center;
+  background:var(--card);border:1px solid var(--line);border-radius:18px;
+  padding:24px 28px;
+  opacity:0;animation:ov-h-in .6s ease .6s forwards;
+}
+.ov-bottom-cta-text{font-size:13.5px;color:var(--muted);margin-bottom:4px}
+.ov-bottom-cta-text b{color:var(--gold)}
+.ov-bottom-cta-sub{font-size:11.5px;color:var(--muted2)}
+</style>
+<script>document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest("a");if(a&&/^https?:/.test(a.getAttribute("href")||"")){a.target="_blank";a.rel="noopener"}},true)</script></head><body>
+<a class="skip" href="#main">Zum Inhalt springen</a><header class="ur-header"><div class="ur-header-in"><a class="ur-logo" href="index.html">URBAN RANCH</a><button class="ur-burger" aria-label="Menü" aria-expanded="false" aria-controls="ur-nav"><span></span></button><nav aria-label="Hauptnavigation"><ul class="ur-nav" id="ur-nav"><li><a href="index.html">START</a></li><li><a href="menue.html">MENÜ</a></li><li><a href="standorte.html" aria-current="page">STANDORTE</a></li><li><a href="https://perspectivefunnel.co/682f378b3858fb003b5b5c4b/6a1226c48f9c3157c46f16ba/" target="_blank" rel="noopener">FRANCHISE</a></li><li><a href="jobs.html">JOBS</a></li><li><a href="index.html#kontakt">KONTAKT</a></li></ul></nav></div></header><div class="ur-social"><a href="https://www.instagram.com/urbanranchofficial/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7.2A4.8 4.8 0 1 0 12 16.8 4.8 4.8 0 0 0 12 7.2zm0 7.9a3.1 3.1 0 1 1 0-6.2 3.1 3.1 0 0 1 0 6.2zM17.3 6.1a1.1 1.1 0 1 0 0 2.2 1.1 1.1 0 0 0 0-2.2zM12 2.2c-3.2 0-3.6 0-4.8.1-1.3.1-2.1.3-2.9.6a5.8 5.8 0 0 0-2.1 1.4A5.8 5.8 0 0 0 .8 6.4c-.3.8-.5 1.6-.6 2.9C.1 10.4.1 10.8.1 12s0 1.6.1 2.7c.1 1.3.3 2.1.6 2.9.3.8.7 1.5 1.4 2.1.6.7 1.3 1.1 2.1 1.4.8.3 1.6.5 2.9.6 1.1.1 1.5.1 4.8.1s3.6 0 4.8-.1c1.3-.1 2.1-.3 2.9-.6a5.8 5.8 0 0 0 2.1-1.4c.7-.6 1.1-1.3 1.4-2.1.3-.8.5-1.6.6-2.9.1-1.1.1-1.5.1-4.8s0-3.6-.1-4.8c-.1-1.3-.3-2.1-.6-2.9a5.8 5.8 0 0 0-1.4-2.1A5.8 5.8 0 0 0 19.7.9c-.8-.3-1.6-.5-2.9-.6C15.6.2 15.2.2 12 .2zm0 1.8c3.1 0 3.5 0 4.7.1 1.1.1 1.7.2 2.1.4.5.2.9.4 1.3.9.4.4.7.8.9 1.3.2.4.3 1 .4 2.1.1 1.2.1 1.6.1 4.7s0 3.5-.1 4.7c-.1 1.1-.2 1.7-.4 2.1-.2.5-.4.9-.9 1.3-.4.4-.8.7-1.3.9-.4.2-1 .3-2.1.4-1.2.1-1.6.1-4.7.1s-3.5 0-4.7-.1c-1.1-.1-1.7-.2-2.1-.4-.5-.2-.9-.4-1.3-.9-.4-.4-.7-.8-.9-1.3-.2-.4-.3-1-.4-2.1C2 15.5 2 15.1 2 12s0-3.5.1-4.7c.1-1.1.2-1.7.4-2.1.2-.5.4-.9.9-1.3.4-.4.8-.7 1.3-.9.4-.2 1-.3 2.1-.4C8.5 2 8.9 2 12 2z"/></svg></a><a href="https://www.tiktok.com/@urban.ranch7" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.5.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a><a href="https://www.youtube.com/@dr.smashh" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8zM9.6 15.6V8.4l6.2 3.6-6.2 3.6z"/></svg></a></div>
+<main id="main"><div class="ov-root">
+<!-- TICKER -->
+<div class="ov-ticker-wrap">
+  <div class="ov-ticker">
+    <span class="ov-ti"><span class="ov-ti-dot"></span>Skyline Plaza Frankfurt</span>
+    <span class="ov-ti"><span class="ov-ti-dot"></span>Bergerstraße Bornheim</span>
+    <span class="ov-ti"><span class="ov-ti-dot"></span>Darmstadt</span>
+    <span class="ov-ti"><span class="ov-ti-dot"></span>Smash Burger seit Tag 1</span>
+    <span class="ov-ti"><span class="ov-ti-dot"></span>Around the World</span>
+    <span class="ov-ti"><span class="ov-ti-dot"></span>Skyline Plaza Frankfurt</span>
+    <span class="ov-ti"><span class="ov-ti-dot"></span>Bergerstraße Bornheim</span>
+    <span class="ov-ti"><span class="ov-ti-dot"></span>Darmstadt</span>
+    <span class="ov-ti"><span class="ov-ti-dot"></span>Smash Burger seit Tag 1</span>
+    <span class="ov-ti"><span class="ov-ti-dot"></span>Around the World</span>
+  </div>
+</div>
+
+<section class="ov-hero">
+  <div class="ov-hero-blob ov-hb1"></div>
+  <div class="ov-hero-blob ov-hb2"></div>
+  <div class="ov-hero-blob ov-hb3"></div>
+  <span class="ov-hero-emoji ov-he1">🍔</span>
+  <span class="ov-hero-emoji ov-he2">🔥</span>
+  <span class="ov-hero-emoji ov-he3">🍟</span>
+
+  <div class="ov-wrap ov-hero-inner">
+    <span class="ov-ey">3 Standorte · Eine Leidenschaft</span>
+    <span class="ov-t1">FIND DEINEN</span>
+    <span class="ov-t2">URBAN RANCH.</span>
+    <p class="ov-sub">Skyline Plaza, Bergerstraße oder Darmstadt — wähle deinen Standort und entdecke Öffnungszeiten, Menü, Lieferung und mehr.</p>
+
+    <div class="ov-live-counter">
+      <span class="ov-live-counter-dot"></span>
+      <span id="liveCounterText">Lädt...</span>
+    </div>
+
+    <div class="ov-stats-row">
+      <div class="ov-stat-card">
+        <span class="ov-stat-icon">📍</span>
+        <div class="ov-stat-title">3 Standorte</div>
+        <div class="ov-stat-desc">Skyline Plaza, Bergerstraße, Darmstadt</div>
+      </div>
+      <div class="ov-stat-card">
+        <span class="ov-stat-icon">🌍</span>
+        <div class="ov-stat-title">Around the World</div>
+        <div class="ov-stat-desc">Alle 2 Wochen ein neuer Weltburger</div>
+      </div>
+      <div class="ov-stat-card">
+        <span class="ov-stat-icon">🚚</span>
+        <div class="ov-stat-title">Wolt &amp; Uber Eats</div>
+        <div class="ov-stat-desc">Lieferung direkt von jedem Standort</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ov-locations">
+  <div class="ov-wrap">
+    <div class="ov-loc-grid">
+
+      <!-- SKYLINE PLAZA -->
+      <div class="ov-loc-card">
+        <div class="ov-loc-strip ov-orange"></div>
+        <div class="ov-loc-photo">
+          <!-- ▼ https://static.wixstatic.com/media/d95c3b_3c40ac2077ca447c9ac1d03351300987~mv2.jpg ersetzen ▼ -->
+          <img src="https://static.wixstatic.com/media/d95c3b_3c40ac2077ca447c9ac1d03351300987~mv2.jpg" alt="Skyline Plaza" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="ov-loc-ph" style="display:none">🍔</div>
+          <span class="ov-loc-status"><span class="ov-loc-status-dot" id="dotSkyline"></span><span id="statusSkyline">Geöffnet</span></span>
+          <span class="ov-loc-rating">★ 4.8</span>
+          <span class="ov-loc-hours-badge" id="hoursSkyline">11:00–20:00</span>
+        </div>
+        <div class="ov-loc-body">
+          <div class="ov-loc-name">SKYLINE PLAZA</div>
+          <div class="ov-loc-addr">Europa-Allee 6, 60327 Frankfurt<br>Food Court · 1. Etage</div>
+          <div class="ov-loc-chips">
+            <span class="ov-loc-chip">🛍️ Shopping</span>
+            <span class="ov-loc-chip">🍟 Volles Menü</span>
+            <span class="ov-loc-chip">🚚 Lieferung</span>
+          </div>
+          <!-- ▼ frankfurt-skylineplaza.html ersetzen ▼ -->
+          <a class="ov-loc-btn ov-orange" href="frankfurt-skylineplaza.html">Zur Seite →</a>
+        </div>
+      </div>
+
+      <!-- BERGERSTRASSE -->
+      <div class="ov-loc-card">
+        <div class="ov-loc-strip ov-green"></div>
+        <div class="ov-loc-photo">
+          <!-- ▼ https://static.wixstatic.com/media/d95c3b_5ba836dd33d945eda85c546399b4ed11~mv2.png ersetzen ▼ -->
+          <img src="https://static.wixstatic.com/media/d95c3b_5ba836dd33d945eda85c546399b4ed11~mv2.png" alt="Bergerstraße" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="ov-loc-ph" style="display:none">🍔</div>
+          <span class="ov-loc-status"><span class="ov-loc-status-dot" id="dotBerger"></span><span id="statusBerger">Geöffnet</span></span>
+          <span class="ov-loc-rating">★ 4.5</span>
+          <span class="ov-loc-hours-badge" id="hoursBerger">13:00–22:00</span>
+        </div>
+        <div class="ov-loc-body">
+          <div class="ov-loc-name">BERGERSTRASSE</div>
+          <div class="ov-loc-addr">Berger Str. 142, 60385 Frankfurt<br>Bornheim · 7 Tage geöffnet</div>
+          <div class="ov-loc-chips">
+            <span class="ov-loc-chip">🌆 Bornheim</span>
+            <span class="ov-loc-chip">🍽️ Sitzplätze</span>
+            <span class="ov-loc-chip">📅 Nie zu</span>
+          </div>
+          <!-- ▼ frankfurt-berger-str.html ersetzen ▼ -->
+          <a class="ov-loc-btn ov-green" href="frankfurt-berger-str.html">Zur Seite →</a>
+        </div>
+      </div>
+
+      <!-- DARMSTADT -->
+      <div class="ov-loc-card">
+        <div class="ov-loc-strip ov-yellow"></div>
+        <div class="ov-loc-photo">
+          <!-- ▼ https://static.wixstatic.com/media/9fdacc_47d3e83e7a7f4b04ac2041d6fbf4b1c8.jpg ersetzen ▼ -->
+          <img src="https://static.wixstatic.com/media/9fdacc_47d3e83e7a7f4b04ac2041d6fbf4b1c8.jpg" alt="Darmstadt" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="ov-loc-ph" style="display:none">🍔</div>
+          <span class="ov-loc-status"><span class="ov-loc-status-dot" id="dotDarmstadt"></span><span id="statusDarmstadt">Geöffnet</span></span>
+          <span class="ov-loc-rating">★ 4.7</span>
+          <span class="ov-loc-hours-badge" id="hoursDarmstadt">12:00–22:00</span>
+        </div>
+        <div class="ov-loc-body">
+          <div class="ov-loc-name">DARMSTADT</div>
+          <div class="ov-loc-addr">Riedlingerstraße 20, 64283 Darmstadt</div>
+          <div class="ov-loc-chips">
+            <span class="ov-loc-chip">🎉 Bis 23:00 Fr/Sa</span>
+            <span class="ov-loc-chip">⭐ Top bewertet</span>
+            <span class="ov-loc-chip">🚚 Lieferung</span>
+          </div>
+          <!-- ▼ darmstadt.html ersetzen ▼ -->
+          <a class="ov-loc-btn ov-yellow" href="darmstadt.html">Zur Seite →</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="ov-bottom-cta">
+      <div class="ov-bottom-cta-text">Nicht sicher, welcher Standort am nächsten liegt? <b>Alle drei liefern über Wolt &amp; Uber Eats.</b></div>
+      <div class="ov-bottom-cta-sub">Wähle einfach die Karte, die zu dir passt.</div>
+    </div>
+  </div>
+</section>
+</div></main>
+<footer class="ur-footer"><div class="ur-footer-in">
+<div><div class="brand">URBAN RANCH</div><p>Deutschlands kreativste Burger.<br>Frankfurt &amp; Darmstadt.</p></div>
+<div><h4>Standorte</h4><ul><li><a href="frankfurt-skylineplaza.html">Skyline Plaza</a></li><li><a href="frankfurt-berger-str.html">Bergerstraße</a></li><li><a href="darmstadt.html">Darmstadt</a></li></ul></div>
+<div><h4>Entdecken</h4><ul><li><a href="menue.html">Menü</a></li><li><a href="jobs.html">Jobs</a></li><li><a href="https://perspectivefunnel.co/682f378b3858fb003b5b5c4b/6a1226c48f9c3157c46f16ba/" target="_blank" rel="noopener">Franchise</a></li><li><a href="index.html#kontakt">Kontakt</a></li></ul></div>
+<div><h4>Folge uns</h4><ul><li><a href="https://www.instagram.com/urbanranchofficial/" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://www.tiktok.com/@urban.ranch7" target="_blank" rel="noopener">TikTok</a></li><li><a href="https://www.youtube.com/@dr.smashh" target="_blank" rel="noopener">YouTube</a></li><li><a href="mailto:office@urban-ranch.de">office@urban-ranch.de</a></li></ul></div>
+</div><div class="ur-footer-bottom"><span>© 2026 Urban Ranch</span><nav><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a><a href="cookies.html">Cookies</a></nav></div></footer>
+<script src="assets/js/config.js"></script><script src="assets/js/site.js"></script>
+<script>
+(function(){
+
+(function(){
+  const now = new Date();
+  const day = now.getDay();
+  const hours = now.getHours() + now.getMinutes()/60;
+  let openCount = 0;
+
+  // Skyline Plaza: Mo–Sa 11:00–20:00, So geschlossen
+  (function(){
+    const isOpenDay = day !== 0;
+    const isOpen = isOpenDay && hours >= 11 && hours < 20;
+    document.getElementById('statusSkyline').textContent = isOpen ? 'Geöffnet' : 'Geschlossen';
+    if(isOpen) openCount++; else document.getElementById('dotSkyline').classList.add('ov-closed');
+  })();
+
+  // Bergerstraße: Mo–Do 13–22, Fr–So 12–22
+  (function(){
+    const isWeekend = (day === 0 || day === 5 || day === 6);
+    const OPEN = isWeekend ? 12 : 13, CLOSE = 22;
+    const isOpen = hours >= OPEN && hours < CLOSE;
+    document.getElementById('statusBerger').textContent = isOpen ? 'Geöffnet' : 'Geschlossen';
+    if(isOpen) openCount++; else document.getElementById('dotBerger').classList.add('ov-closed');
+  })();
+
+  // Darmstadt: Mo–Do 12–22, Fr–Sa 12–23, So 14–22
+  (function(){
+    let OPEN, CLOSE;
+    if(day === 0){ OPEN = 14; CLOSE = 22; }
+    else if(day === 5 || day === 6){ OPEN = 12; CLOSE = 23; }
+    else { OPEN = 12; CLOSE = 22; }
+    const isOpen = hours >= OPEN && hours < CLOSE;
+    document.getElementById('statusDarmstadt').textContent = isOpen ? 'Geöffnet' : 'Geschlossen';
+    if(isOpen) openCount++; else document.getElementById('dotDarmstadt').classList.add('ov-closed');
+  })();
+
+  document.getElementById('liveCounterText').innerHTML = '<b>' + openCount + ' von 3</b> Standorten gerade geöffnet';
+})();
+
+
+})();
+</script>
+</body></html>

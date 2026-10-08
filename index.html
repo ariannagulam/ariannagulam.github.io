@@ -1,0 +1,501 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Arianna Gulam: Marketing, Content, Design und Websites. Portfolio mit Urban Ranch, SUPERPAW für adidas und Designs. Offen für Kooperationen.">
+<meta property="og:title" content="Arianna Gulam · Marketing, Content, Design">
+<meta property="og:image" content="img/me.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle cx=%2750%27 cy=%2750%27 r=%2750%27 fill=%27%23831111%27/%3E%3Ctext x=%2750%27 y=%2770%27 font-size=%2760%27 text-anchor=%27middle%27 fill=%27%23e9b8b2%27 font-family=%27Georgia%27 font-style=%27italic%27%3EA%3C/text%3E%3C/svg%3E">
+<title>Arianna Gulam · Marketing, Content, Design</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Manrope:wght@700;800&family=Outfit:wght@400;500;700;800&family=Marck+Script&family=Playfair+Display:ital,wght@0,700;0,800;1,400&display=swap">
+<style>
+:root{color-scheme:light}body{margin:0}img{max-width:100%}[hidden]{display:none!important}
+
+/* Layout: one stage, four "letters" stacked on top of each other; each new one opens with a wax-seal circular wipe. */
+:root{
+  --burgundi:#831111;--burgundi-deep:#5c0b0d;--cream:#fffaf2;--latte:#f3e6d3;--shoko:#865b4f;--cocoa:#2e2120;--blush:#e9b8b2;--sage:#8a9e8f;
+  --line-light:#ecd6cf;--line-dark:#9e3530;--line-cocoa:#4a3734;--muted-light:#9a4a42;--muted-dark:#f2cfc9;--muted-cocoa:#cdb9ad;--cocoa-raised:#3d2c2a;
+  --sp-black:#0c0c0c;--sp-white:#f7f4ef;--sp-grey:#d6d1c8;
+  --f-display:'Playfair Display','Times New Roman',serif;--f-text:'EB Garamond',Garamond,Georgia,serif;--f-label:Manrope,'Helvetica Neue',Arial,sans-serif;--f-script:'Marck Script','Segoe Script',cursive;
+  --r:18px;--pill:999px;
+  --sh-sticker:0 7px 6px rgba(30,4,5,.5);--sh-soft:0 12px 32px rgba(30,4,5,.45);--sh-soft-light:0 12px 32px rgba(92,11,13,.14);
+  --ease:cubic-bezier(.2,.7,.2,1);
+}
+html,body{height:100%}
+body{background:var(--burgundi);color:var(--cream);font-family:var(--f-text);font-size:18px;line-height:1.5;overflow:hidden}
+*{box-sizing:border-box}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;padding:0}
+:focus-visible{outline:2px solid currentColor;outline-offset:3px;border-radius:6px}
+.label{font-family:var(--f-label);font-weight:700;font-size:12px;letter-spacing:.14em;text-transform:uppercase;line-height:1.2}
+.pill{display:inline-block;border:1px solid currentColor;border-radius:var(--pill);padding:8px 16px}
+h1,h2,h3{font-family:var(--f-display);font-weight:700;margin:0;text-wrap:balance;letter-spacing:-.02em;line-height:.98}
+h1{font-size:clamp(44px,8vw,96px)}
+h2{font-size:clamp(34px,5.4vw,64px)}
+h1 i,h2 i{font-weight:400;font-style:italic;color:var(--hl)}
+.lead{font-size:clamp(18px,2vw,22px);max-width:34em;margin:0}
+.script{font-family:var(--f-script);font-size:30px;line-height:1.1}
+
+.stage{position:relative;height:100%;overflow:hidden}
+.bar{position:absolute;left:0;right:0;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px clamp(16px,4vw,48px);color:var(--bar);transition:color .5s}
+.bar.top{top:0;padding-top:calc(16px + env(safe-area-inset-top,0px))}
+.bar.bottom{bottom:0;padding-bottom:calc(16px + env(safe-area-inset-bottom,0px))}
+.stage[data-tone="dark"]{--bar:var(--cream)}
+.stage[data-tone="light"]{--bar:var(--burgundi-deep)}
+.brand{font-family:var(--f-display);font-weight:700;font-size:20px;letter-spacing:-.01em}
+.langs{display:flex;gap:4px}
+.langs button{padding:6px 10px;border-radius:var(--pill);border:1px solid transparent}
+.langs button[aria-pressed="true"]{border-color:currentColor}
+.nav{display:flex;gap:6px;flex-wrap:wrap;justify-content:center}
+.nav button{padding:8px 12px;border-radius:var(--pill);border:1px solid transparent;opacity:.75}
+.nav button[aria-current="true"]{border-color:currentColor;opacity:1}
+.arrows{display:flex;align-items:center;gap:10px}
+.arrows button{width:40px;height:40px;border:1px solid currentColor;border-radius:50%;font-size:18px;line-height:1}
+.count{font-variant-numeric:tabular-nums}
+@media(max-width:640px){.nav{display:none}.brand{font-size:17px}}
+
+.panel{position:absolute;inset:0;overflow-y:auto;overflow-x:hidden;visibility:hidden;padding-block:88px 96px;padding-inline:clamp(16px,5vw,72px);display:grid;align-content:center;background:var(--bg);color:var(--fg)}
+.panel.active{visibility:visible;z-index:1}
+.panel.enter{visibility:visible;z-index:2;animation:wipe .9s var(--ease) both}
+@keyframes wipe{from{clip-path:circle(0 at var(--x,50%) var(--y,50%))}to{clip-path:circle(150vmax at var(--x,50%) var(--y,50%))}}
+.inner{width:100%;max-width:1180px;margin-inline:auto;display:grid;gap:32px}
+.panel.active .rise,.panel.enter .rise{animation:rise .6s var(--ease) both;animation-delay:calc(var(--d,0) * 90ms + 150ms)}
+@keyframes rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+/* 1 — cover */
+#p-hello{--bg:var(--burgundi);--fg:var(--cream);--hl:var(--blush)}
+.cover{grid-template-columns:1.1fr .9fr;align-items:center}
+.cover>div{min-width:0;display:grid;gap:24px;justify-items:start}
+.btn{display:inline-block;background:var(--cream);color:var(--burgundi-deep);border-radius:var(--r);padding:14px 22px;transition:transform .3s var(--ease)}
+.btn:hover{transform:translateY(-2px)}
+.btn.ghost{background:none;color:inherit;border:1px solid currentColor}
+.row{display:flex;gap:12px;flex-wrap:wrap}
+.envwrap{justify-items:center!important;perspective:1200px;padding-top:40px}
+.env{position:relative;width:min(400px,100%);aspect-ratio:3/2;transform-style:preserve-3d;transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) rotate(-4deg);transition:transform .25s ease-out}
+.env-back,.env-front,.flap{position:absolute;inset:0;border-radius:10px}
+.env-back{background:var(--shoko);box-shadow:var(--sh-soft)}
+.env-front{background:var(--latte);clip-path:polygon(0 0,50% 52%,100% 0,100% 100%,0 100%);z-index:3}
+.env-front::after{content:"";position:absolute;inset:0;background:var(--line-light);clip-path:polygon(0 100%,50% 50%,100% 100%,100% 99%,50% 49%,0 99%)}
+.flap{background:var(--blush);clip-path:polygon(0 0,100% 0,50% 56%);transform-origin:top;transition:transform .6s var(--ease);z-index:4}
+.card{position:absolute;left:6%;right:6%;top:6%;bottom:6%;background:var(--cream);color:var(--burgundi-deep);border-radius:10px;padding:18px;display:grid;align-content:center;gap:6px;text-align:center;z-index:2;transition:transform .7s var(--ease);box-shadow:var(--sh-sticker)}
+.card h3{font-size:clamp(22px,3vw,30px);color:var(--burgundi)}
+.card p{margin:0;font-size:15px}
+.card .label{color:var(--muted-light);font-size:10px}
+.env.open .flap{transform:rotateX(180deg);z-index:1}
+.env.open .card{transform:translateY(-78%)}
+.env.front .card{z-index:6;transform:translateY(-12%) rotate(5deg) scale(1.06)}
+.seal{position:absolute;left:50%;top:52%;width:84px;height:84px;margin:-42px 0 0 -42px;z-index:7;border-radius:50%;background:radial-gradient(circle at 35% 30%,#a52222,var(--burgundi-deep) 75%);background-color:var(--burgundi);color:var(--blush);box-shadow:var(--sh-sticker);display:grid;place-items:center;font-family:var(--f-display);font-style:italic;font-size:34px;transition:transform .5s var(--ease),opacity .4s;animation:pulse 2.4s ease-in-out infinite}
+.seal::before{content:"";position:absolute;inset:8px;border:1px solid var(--blush);border-radius:50%;opacity:.6}
+@keyframes pulse{50%{transform:scale(1.07) rotate(-6deg)}}
+.env.open .seal{transform:translateY(60px) rotate(40deg) scale(.5);opacity:0;pointer-events:none;animation:none}
+.hint{display:flex;align-items:center;gap:8px;color:var(--blush);margin-top:8px}
+.hint svg{width:64px;height:40px;transform:rotate(-100deg)}
+.draw{stroke-dasharray:200;stroke-dashoffset:200;animation:draw 1.2s .8s var(--ease) forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+
+.cover .envwrap{padding-top:16px}
+.portrait{margin:0;justify-self:end;width:min(290px,64%);position:relative;transform:rotate(3deg);transition:transform .6s var(--ease)}
+.portrait:hover{transform:rotate(1deg) translateY(-4px)}
+.portrait img{display:block;width:100%;aspect-ratio:3/4;object-fit:cover;object-position:50% 18%;border-radius:240px 240px var(--r) var(--r);border:8px solid var(--latte);outline:1px solid var(--shoko);outline-offset:-4px;box-shadow:var(--sh-soft)}
+.portrait figcaption{position:absolute;top:16%;right:-14px;background:var(--sage);color:var(--burgundi-deep);border-radius:var(--pill);padding:7px 12px;transform:rotate(10deg);box-shadow:var(--sh-sticker)}
+.cover .env{justify-self:start;margin-top:-120px;width:min(360px,88%)}
+.cover .hint{justify-self:start}
+/* 2 — experience */
+#p-weg{--bg:var(--cream);--fg:var(--burgundi-deep);--hl:var(--burgundi)}
+.tags{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr) minmax(0,1fr);gap:24px;position:relative}
+.tag{background:var(--latte);border-radius:var(--r);padding:24px;box-shadow:var(--sh-soft-light);display:grid;gap:10px;align-content:start;transform:rotate(var(--rot,0deg));transition:transform .4s var(--ease)}
+.tag:hover{transform:rotate(calc(var(--rot,0deg) + 2deg)) translateY(-4px)}
+.tag .when{color:var(--burgundi)}
+.tag h3{font-size:26px;letter-spacing:-.01em;line-height:1.05}
+.tag p,.tag ul{margin:0;font-size:17px}
+.tag ul{padding-left:18px}
+.tag li::marker{color:var(--sage)}
+.stamp{justify-self:end;width:52px;height:60px;border:2px dashed var(--shoko);border-radius:6px;display:grid;place-items:center;font-family:var(--f-display);font-weight:800;color:var(--burgundi);font-size:22px;transform:rotate(8deg);margin-bottom:-36px}
+.skills{display:flex;gap:8px;flex-wrap:wrap;color:var(--burgundi)}
+
+/* 3 — work */
+#p-arbeiten{--bg:var(--cocoa);--fg:var(--cream);--hl:var(--blush)}
+.frames{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;align-items:end}
+.frame{display:grid;gap:14px;text-align:left;transition:transform .45s var(--ease)}
+.frame:hover{transform:translateY(-8px) rotate(-1.5deg)}
+.frame:nth-child(2):hover{transform:translateY(-8px) rotate(1.5deg)}
+.pic{border:10px solid var(--latte);outline:1px solid var(--shoko);outline-offset:-5px;border-radius:var(--r);aspect-ratio:4/5;max-width:100%;overflow:hidden;box-shadow:var(--sh-soft);position:relative;display:grid;place-items:center;padding:18px;text-align:center}
+.frame:nth-child(2) .pic{border-radius:240px 240px var(--r) var(--r)}
+.pic.ur{background:var(--burgundi);color:var(--cream)}
+.pic.adi{padding:0;background:var(--sp-black);font-family:Outfit,Arial,sans-serif}
+.pic.adi img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:100% 50%}
+.sp-word{display:none;position:absolute;left:16px;top:44px;font-weight:800;font-size:clamp(30px,3.4vw,46px);line-height:.85;letter-spacing:-.03em;color:var(--sp-black);text-align:left}
+.sp-word b{display:block;color:var(--sp-white)}
+.pic.ig{background:var(--blush);color:var(--burgundi-deep)}
+.pic .big{font-family:var(--f-display);font-weight:800;font-size:clamp(26px,3vw,40px);line-height:.95}
+.open-tag{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);background:var(--cream);color:var(--burgundi-deep);border-radius:var(--pill);padding:7px 12px;font-size:10px;white-space:nowrap}
+.frame h3{font-size:24px;line-height:1.05;letter-spacing:-.01em}
+.frame p{margin:0;color:var(--muted-cocoa);font-size:16px}
+.minifan{display:flex;justify-content:center}
+.minifan span{width:44px;height:64px;border-radius:8px;background:var(--cream);border:1px solid var(--shoko);margin-inline:-10px;transform:rotate(calc((var(--i) - 2) * 9deg)) translateY(calc((var(--i) - 2) * (var(--i) - 2) * 4px));transition:transform .4s var(--ease)}
+.frame:hover .minifan span{transform:rotate(calc((var(--i) - 2) * 14deg)) translateY(calc((var(--i) - 2) * (var(--i) - 2) * 6px - 6px))}
+
+/* 4 — contact */
+#p-kontakt{--bg:var(--burgundi-deep);--fg:var(--cream);--hl:var(--blush)}
+.contact{grid-template-columns:1.2fr .8fr;align-items:center}
+.contact>div{min-width:0;display:grid;gap:22px;justify-items:start}
+.mail{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.mail span{font-family:var(--f-display);font-size:clamp(20px,3vw,34px);user-select:all;overflow-wrap:anywhere}
+.ring{width:min(300px,70vw);aspect-ratio:1;position:relative;justify-self:center!important}
+.ring svg{width:100%;height:100%;animation:spin 26s linear infinite}
+.ring text{font-family:var(--f-label);font-weight:700;font-size:11px;letter-spacing:.2em;fill:var(--blush);text-transform:uppercase}
+.ring .core{position:absolute;inset:19%;border-radius:50%;padding:7px;background:var(--latte);box-shadow:0 0 0 1px var(--shoko),0 0 0 5px var(--burgundi),0 0 0 6px var(--blush),var(--sh-soft);transition:transform .6s var(--ease)}
+.ring .core::after{content:"";position:absolute;inset:7px;border-radius:50%;box-shadow:inset 0 0 0 1px var(--shoko),inset 0 6px 18px rgba(30,4,5,.45);pointer-events:none}
+.ring .core img{display:block;width:100%;height:100%;border-radius:50%;object-fit:cover;object-position:50% 16%}
+.ring:hover .core{transform:scale(1.04) rotate(-2deg)}
+@keyframes spin{to{transform:rotate(360deg)}}
+.services{display:flex;gap:8px;flex-wrap:wrap;color:var(--blush)}
+
+/* designs table */
+#p-designs{--bg:var(--latte);--fg:var(--burgundi-deep);--hl:var(--burgundi)}
+.table{position:relative;height:400px}
+.print{position:absolute;left:var(--l);top:var(--t);width:var(--w);transform:rotate(var(--r));transition:left .7s var(--ease),top .7s var(--ease),transform .5s var(--ease);background:var(--cream);padding:8px 8px 6px;border-radius:8px;box-shadow:var(--sh-soft-light);display:grid;gap:6px;text-align:left}
+.print img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:4px;display:block}
+.print span{font-size:9px;color:var(--muted-light)}
+.print:hover,.print:focus-visible{transform:rotate(0deg) scale(1.08) translateY(-8px);z-index:5}
+.btn.dark{background:var(--burgundi);color:var(--cream)}
+.tag.wide ul{columns:2;column-gap:28px}
+.tag li{break-inside:avoid;margin-bottom:4px}
+.muted{color:var(--muted-light)}
+.urframe{width:100%;height:min(74vh,760px);border:0;display:block;background:var(--cocoa)}
+.sheet.wide{width:min(1180px,100%)}
+.sp-page{width:100%;display:block;animation:slidein .5s var(--ease) both}
+.lightbox{display:block;max-width:100%;max-height:80vh;margin:auto}
+.fallback{padding:32px;display:grid;gap:16px;justify-items:start}
+@media(max-width:820px){.tag.wide ul{columns:1}}
+@media(max-width:700px){.table{height:460px}}
+
+/* viewer */
+.viewer{position:absolute;inset:0;z-index:40;background:rgba(46,33,32,.82);display:grid;place-items:center;padding:16px}
+.sheet{width:min(920px,100%);max-height:100%;background:var(--cream);color:var(--burgundi-deep);border-radius:var(--r);box-shadow:var(--sh-soft);display:grid;grid-template-rows:auto 1fr;overflow:hidden;animation:pop .5s var(--ease) both}
+@keyframes pop{from{opacity:0;transform:translateY(24px) scale(.96) rotate(-1deg)}}
+.chrome{display:flex;align-items:center;gap:12px;padding:10px 14px;background:var(--latte);border-bottom:1px solid var(--line-light)}
+.dots{display:flex;gap:6px}.dots i{width:10px;height:10px;border-radius:50%;background:var(--shoko)}.dots i:first-child{background:var(--burgundi)}.dots i:last-child{background:var(--sage)}
+.url{flex:1;min-width:0;background:var(--cream);border-radius:var(--pill);padding:6px 14px;font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--muted-light)}
+.close{width:34px;height:34px;border:1px solid currentColor;border-radius:50%}
+.vbody{overflow:auto;min-height:0}
+.note{font-size:13px;font-style:italic;padding:8px 16px;margin:0;color:var(--muted-light);background:var(--cream)}
+
+/* Urban Ranch demo site */
+.ur-site{background:var(--cocoa);color:var(--cream);min-height:440px;display:grid;grid-template-rows:auto 1fr}
+.ur-nav{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:14px 20px;border-bottom:1px solid var(--line-cocoa)}
+.ur-logo{font-family:var(--f-label);font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+.ur-tabs{display:flex;gap:4px;flex-wrap:wrap}
+.ur-tabs button{padding:7px 12px;border-radius:var(--pill)}
+.ur-tabs button[aria-selected="true"]{background:var(--blush);color:var(--burgundi-deep)}
+.ur-page{padding:28px 20px;display:grid;gap:20px;align-content:start;animation:rise .45s var(--ease) both}
+.ur-page h3{font-family:var(--f-label);font-weight:800;text-transform:uppercase;font-size:clamp(28px,5vw,52px);letter-spacing:-.02em;line-height:.95}
+.ur-page h3 em{font-style:normal;color:var(--blush)}
+.ur-page p{margin:0;color:var(--muted-cocoa);max-width:36em}
+.ur-btn{background:var(--blush);color:var(--burgundi-deep);border-radius:var(--pill);padding:12px 18px}
+.ur-btn.o{background:none;color:var(--cream);border:1px solid var(--cream)}
+.flips{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px}
+.flip{perspective:800px;aspect-ratio:3/4;max-width:100%}
+.flip>div{position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform .6s var(--ease)}
+.flip[aria-pressed="true"]>div{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;backface-visibility:hidden;border-radius:var(--r);background:var(--cocoa-raised);border:1px solid var(--line-cocoa);display:grid;place-items:center;align-content:center;gap:12px;padding:14px;text-align:center}
+.face.b{transform:rotateY(180deg);background:var(--blush);color:var(--burgundi-deep);font-size:16px}
+.burger{display:grid;gap:3px;width:74px}
+.burger i{display:block;border-radius:6px;height:8px}
+.burger .bun{background:var(--latte);height:20px;border-radius:40px 40px 6px 6px}
+.burger .bun.lo{height:12px;border-radius:6px 6px 14px 14px}
+.burger .pat{background:var(--shoko);height:11px}
+.burger .ch{background:var(--blush);height:5px}
+.burger .sal{background:var(--sage);height:5px}
+.locs{display:grid;gap:10px}
+.loc{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;background:var(--cocoa-raised);border:1px solid var(--line-cocoa);border-radius:var(--r);padding:16px 18px}
+.loc b{font-family:var(--f-label);font-weight:800;text-transform:uppercase;letter-spacing:.04em}
+.status{display:flex;align-items:center;gap:8px}
+.status i{width:10px;height:10px;border-radius:50%;background:var(--sage);animation:blink 1.6s infinite}
+.status.off i{background:var(--shoko);animation:none}
+@keyframes blink{50%{opacity:.35}}
+.game{display:grid;justify-items:center;gap:16px;text-align:center}
+.patty{width:150px;height:150px;border-radius:50%;background:var(--shoko);box-shadow:inset 0 -14px 0 rgba(0,0,0,.2),var(--sh-sticker);transition:height .08s,border-radius .08s,margin .08s;color:var(--cream)}
+.patty:active{height:70px;margin-top:80px;border-radius:50%/60%}
+.score{font-family:var(--f-display);font-weight:800;font-size:64px;line-height:.9;color:var(--blush);font-variant-numeric:tabular-nums}
+
+/* SUPERPAW case — in its own brand register */
+.sp{font-family:Outfit,Arial,sans-serif;background:var(--sp-black);color:var(--sp-white)}
+.sp-slide{display:grid;grid-template-columns:1fr 1fr;background:var(--sbg);color:var(--sfg);animation:slidein .5s var(--ease) both}
+@keyframes slidein{from{opacity:0;transform:translateX(calc(var(--dir,1) * 40px))}}
+.sp-slide img{width:100%;height:min(560px,66vh);object-fit:cover;display:block}
+.sp-slide img.contain{object-fit:contain;padding:20px}
+.sp-slide.rev img{order:2}
+.sp-txt{padding:clamp(20px,4vw,48px);display:grid;gap:16px;align-content:center;min-width:0}
+.sp-txt h3{font-family:inherit;font-weight:800;font-size:clamp(34px,5vw,64px);line-height:.95;letter-spacing:-.03em}
+.sp-txt h3.xl{font-size:clamp(64px,11vw,136px);line-height:.85}
+.sp-txt p{margin:0;font-size:17px;line-height:1.4}
+.sp-txt p.b{font-weight:700;font-size:clamp(20px,2.4vw,26px);line-height:1.2}
+.sp-txt .k{font-weight:500;letter-spacing:.12em;font-size:13px}
+.sp-txt .dim{opacity:.75;font-size:14px}
+.sp-feat{display:grid;gap:14px}
+.sp-feat div{border-top:3px solid currentColor;padding-top:10px}
+.sp-feat b{font-size:20px;display:block}
+.sp-feat span{font-size:16px;line-height:1.4}
+.sw{display:flex;align-items:center;gap:14px;font-weight:700;font-size:22px}
+.sw i{width:30px;height:30px;border-radius:50%;background:var(--c)}
+.sp-ctrl{display:flex;justify-content:space-between;align-items:center;padding:12px 20px;font-size:12px;letter-spacing:.14em;font-weight:700}
+.sp-ctrl button{border:1px solid var(--sp-white);padding:8px 14px;text-transform:lowercase;font-weight:800;letter-spacing:.08em}
+.sp-ctrl button:hover{background:var(--sp-white);color:var(--sp-black)}
+@media(max-width:700px){.sp-slide{grid-template-columns:1fr}.sp-slide img{height:240px}.sp-slide.rev img{order:0}}
+.headrow{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap}
+.stat{display:grid;gap:6px;transform:rotate(-2deg)}
+.stat .num{font-family:var(--f-display);font-weight:800;font-size:clamp(48px,7vw,96px);line-height:.9;letter-spacing:-.03em;color:var(--burgundi)}
+.stat .num i{font-weight:400;font-style:italic}
+.stat .label{color:var(--muted-light)}
+.ur-nav a{color:var(--blush)}
+.badge{position:absolute;top:10px;left:10px;background:var(--blush);color:var(--burgundi-deep);border-radius:var(--pill);padding:4px 8px;font-size:9px}
+.price{font-family:var(--f-display);font-weight:700}
+.loc small{display:block;color:var(--muted-cocoa);font-size:15px}
+.mem{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;max-width:520px}
+.mem .flip{aspect-ratio:1}
+.mem .face{font-family:var(--f-label);font-weight:800;font-size:clamp(10px,2vw,14px);text-transform:uppercase;padding:6px}
+.mem .flip.done .face.b{background:var(--sage)}
+.ur-page h4{margin:8px 0 0;color:var(--blush)}
+
+/* strategy fan */
+.strat{padding:clamp(20px,4vw,40px);display:grid;gap:24px}
+.strat h3{font-size:clamp(28px,4vw,44px);color:var(--burgundi)}
+.strat h3 i{font-weight:400}
+.pillars{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.pillar{text-align:left;border-radius:var(--r);padding:18px;min-height:170px;display:grid;align-content:space-between;gap:12px;background:var(--latte);transition:transform .4s var(--ease),background .3s,color .3s;transform:rotate(calc((var(--i) - 2) * 1.5deg))}
+.pillar .num{font-family:var(--f-display);font-weight:800;font-size:40px;line-height:.9;color:var(--burgundi)}
+.pillar b{font-family:var(--f-display);font-size:21px;line-height:1.05}
+.pillar span.t{font-size:16px;display:none}
+.pillar[aria-expanded="true"]{background:var(--burgundi);color:var(--cream);transform:rotate(0) translateY(-6px)}
+.pillar[aria-expanded="true"] .num{color:var(--blush)}
+.pillar[aria-expanded="true"] span.t{display:block}
+
+@media(max-width:820px){
+  .cover,.contact{grid-template-columns:1fr}
+  .tags,.frames{grid-template-columns:1fr}
+  .frames{justify-items:center}.frame{width:min(320px,100%)}
+  .panel{align-content:start}
+  .envwrap{padding-top:120px}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.draw{stroke-dashoffset:0}}
+</style>
+
+</head>
+<body>
+<div class="stage" id="stage" data-tone="dark">
+  <header class="bar top">
+    <span class="brand">arianna gulam</span>
+    <div class="langs label" role="group" aria-label="Sprache">
+      <button data-lang="de" aria-pressed="true">DE</button><button data-lang="en" aria-pressed="false">EN</button>
+    </div>
+  </header>
+
+  <section class="panel active" id="p-hello">
+    <div class="inner cover">
+      <div>
+        <span class="label pill rise" data-i="h_tag"></span>
+        <h1 class="rise" style="--d:1" data-i="h_title"></h1>
+        <p class="lead rise" style="--d:2" data-i="h_lead"></p>
+        <div class="row rise" style="--d:3">
+          <button class="btn label" data-go="2" data-i="h_cta1"></button>
+          <button class="btn ghost label" data-go="4" data-i="h_cta2"></button>
+        </div>
+      </div>
+      <div class="envwrap rise" style="--d:2">
+        <figure class="portrait"><img src="img/me.jpg" alt="Arianna Gulam"><figcaption class="label" data-i="me_tag"></figcaption></figure>
+        <div class="env" id="env">
+          <div class="env-back"></div>
+          <div class="card">
+            <span class="label" data-i="c_role"></span>
+            <h3>Arianna Gulam</h3>
+            <p>ariannagulam@gmail.com</p>
+            <p data-i="c_city"></p>
+          </div>
+          <div class="env-front"></div>
+          <div class="flap"></div>
+          <button class="seal" id="seal" aria-label="Umschlag öffnen">A</button>
+        </div>
+        <div class="hint">
+          <svg viewBox="0 0 64 40" fill="none" aria-hidden="true"><path class="draw" d="M4 30C18 6 40 4 56 18M56 18l-10-2M56 18l-3 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          <span class="script" data-i="h_hint"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel" id="p-weg">
+    <div class="inner">
+      <span class="label pill rise" style="justify-self:start;color:var(--burgundi)" data-i="e_tag"></span>
+      <div class="headrow"><h2 class="rise" style="--d:1" data-i="e_title"></h2><div class="stat rise" style="--d:2"><span class="num">7k <i>→</i> 9k</span><span class="label" data-i="st_cap"></span></div></div>
+      <div class="tags">
+        <article class="tag wide rise" style="--d:2;--rot:-.8deg"><span class="stamp">01</span><span class="label when" data-i="e1_when"></span><h3 data-i="e1_h"></h3><p class="label muted">Urban Ranch GmbH · Frankfurt am Main</p><ul data-i="e1_list"></ul></article>
+        <article class="tag rise" style="--d:3;--rot:1deg"><span class="stamp">02</span><span class="label when">2020 – 2022</span><h3 data-i="e2_h"></h3><ul data-i="e2_list"></ul></article>
+        <article class="tag rise" style="--d:4;--rot:-.8deg"><span class="stamp">03</span><span class="label when" data-i="e3_when"></span><h3 data-i="e3_h"></h3><ul data-i="e3_list"></ul></article>
+      </div>
+      <div class="skills label rise" style="--d:5"><span class="pill">Canva</span><span class="pill">Figma</span><span class="pill">Wix Studio</span><span class="pill">Meta Business Suite</span><span class="pill">DaVinci Resolve</span><span class="pill">CapCut</span><span class="pill">Lightroom</span><span class="pill">Ahrefs</span></div>
+    </div>
+  </section>
+
+  <section class="panel" id="p-arbeiten">
+    <div class="inner">
+      <span class="label pill rise" style="justify-self:start;color:var(--blush)" data-i="w_tag"></span>
+      <h2 class="rise" style="--d:1" data-i="w_title"></h2>
+      <div class="frames">
+        <button class="frame rise" style="--d:2" data-open="ur">
+          <span class="pic ur"><span><span class="label">Wix Studio</span><br><span class="big">urban<br>ranch</span></span><span class="open-tag label" data-i="w_click"></span></span>
+          <h3 data-i="w1_h"></h3><p data-i="w1_p"></p>
+        </button>
+        <button class="frame rise" style="--d:3" data-open="adi">
+          <span class="pic adi"><img src="img/sp1.jpg" alt="Beagle in a burgundy track top and four matching boots"><span class="sp-word">super<b>paw</b></span><span class="open-tag label" data-i="w_click"></span></span>
+          <h3 data-i="w2_h"></h3><p data-i="w2_p"></p>
+        </button>
+        <button class="frame rise" style="--d:4" data-open="ig">
+          <span class="pic ig"><span style="display:grid;gap:26px"><span class="minifan"><span style="--i:0"></span><span style="--i:1"></span><span style="--i:2"></span><span style="--i:3"></span><span style="--i:4"></span></span><span class="big">5 pillars</span></span><span class="open-tag label" data-i="w_click"></span></span>
+          <h3 data-i="w3_h"></h3><p data-i="w3_p"></p>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel" id="p-designs">
+    <div class="inner">
+      <span class="label pill rise" style="justify-self:start;color:var(--burgundi)" data-i="d_tag"></span>
+      <div class="headrow"><h2 class="rise" style="--d:1" data-i="d_title"></h2><button class="btn dark label rise" style="--d:2" id="shuffle" data-i="d_shuffle"></button></div>
+      <p class="lead rise" style="--d:2" data-i="d_lead"></p>
+      <div class="table rise" style="--d:3" id="table"></div>
+    </div>
+  </section>
+
+  <section class="panel" id="p-kontakt">
+    <div class="inner contact">
+      <div>
+        <span class="label pill rise" style="color:var(--blush)" data-i="k_tag"></span>
+        <h2 class="rise" style="--d:1" data-i="k_title"></h2>
+        <p class="lead rise" style="--d:2" data-i="k_lead"></p>
+        <div class="services label rise" style="--d:3"><span class="pill" data-i="s1"></span><span class="pill" data-i="s2"></span><span class="pill" data-i="s3"></span><span class="pill" data-i="s4"></span></div>
+        <div class="mail rise" style="--d:4"><span id="mail">ariannagulam@gmail.com</span><button class="btn label" id="copy" data-i="k_copy"></button></div>
+        <span class="script rise" style="--d:5;color:var(--blush)" data-i="k_sign"></span>
+      </div>
+      <div class="ring rise" style="--d:2" aria-hidden="true">
+        <svg viewBox="0 0 200 200"><defs><path id="circ" d="M100,100 m-84,0 a84,84 0 1,1 168,0 a84,84 0 1,1 -168,0"/></defs><text><textPath href="#circ">kooperationen · websites · content · branding · kooperationen · websites · </textPath></text></svg>
+        <div class="core"><img src="img/me.jpg" alt="Arianna Gulam"></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bar bottom label">
+    <span class="count" id="count">01/05</span>
+    <nav class="nav" aria-label="Seiten">
+      <button data-go="0" data-i="n0"></button><button data-go="1" data-i="n1"></button><button data-go="2" data-i="n2"></button><button data-go="3" data-i="nd"></button><button data-go="4" data-i="n3"></button>
+    </nav>
+    <div class="arrows"><button id="prev" aria-label="Zurück">←</button><button id="next" aria-label="Weiter">→</button></div>
+  </footer>
+
+  <div class="viewer" id="viewer" hidden role="dialog" aria-modal="true" aria-label="Arbeit">
+    <div class="sheet">
+      <div class="chrome"><span class="dots"><i></i><i></i><i></i></span><span class="url" id="vurl"></span><button class="close" id="vclose" aria-label="Schließen">✕</button></div>
+      <div class="vbody" id="vbody"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+const T={
+de:{h_tag:"Marketing · Content · Websites",h_title:"hallo, ich bin <i>arianna</i>",h_lead:"Ich mache Marken sichtbar: mit Content, der gespeichert wird, und Websites, die man gern anklickt. Aus Mainz, offen für Kooperationen.",h_cta1:"Arbeiten ansehen",h_cta2:"Kontakt",h_hint:"öffne mich",c_role:"Marketing & Webdesign",c_city:"Mainz · Frankfurt",
+e_tag:"Erfahrung",e_title:"mein weg, <i>kurz</i> erzählt",e1_when:"seit Nov 2025",e1_h:"Marketing",st_cap:"Instagram-Follower · organisch · Dez–Okt",sk_shoot:"Foto & Video",e1_list:"<li>Instagram organisch von 7k auf 9k Follower gebracht</li><li>Content selbst gedreht: Foto und Video</li><li>Website in Wix Studio: Menü, Standorte, Memory-Game</li><li>Strategie mit fünf Content-Säulen, Menüs, Promo-Grafiken</li>",e2_when:"seit Jan 2026",e2_h:"Marketing B.A., dual",e2_p:"Theorie an der Hochschule, Praxis jede Woche im Unternehmen.",e3_when:"davor",e3_h:"Philologie B.A.",e3_org:"Kyjiw-Mohyla-Akademie",e3_p:"Mit Nebenfach Marketing. Daher kommt mein Gefühl für Sprache und Ton.",
+w_tag:"Arbeiten",w_title:"arbeiten zum <i>anklicken</i>",w_click:"klick mich",w1_h:"Urban Ranch Website",w1_p:"Mehrseitige Website mit Flip-Menü, Live-Standorten und Memory-Game. Zum Durchklicken.",w2_h:"SUPERPAW für adidas",w2_p:"Winterschuh für Hunde: Produktkonzept, Storytelling und Kampagnentext.",w3_h:"Instagram-Strategie",w3_p:"Fünf Content-Säulen für Urban Ranch.",
+k_tag:"Kontakt",k_title:"lass uns etwas <i>schönes</i> machen",k_lead:"Schreib mir, wenn du eine Website, eine Content-Strategie oder frische Ideen für deine Marke brauchst.",s1:"Wix-Websites",s2:"Instagram-Content",s3:"Branding",s4:"Kampagnenideen",k_copy:"E-Mail kopieren",k_copied:"Kopiert",k_sign:"mit liebe, A.",n0:"Hallo",n1:"Erfahrung",n2:"Arbeiten",n3:"Kontakt"},
+en:{h_tag:"Marketing · Content · Websites",h_title:"hello, i'm <i>arianna</i>",h_lead:"I make brands visible with content people save and websites people enjoy clicking through. Based in Mainz, open to collaborations.",h_cta1:"See my work",h_cta2:"Contact",h_hint:"open me",c_role:"Marketing & web design",c_city:"Mainz · Frankfurt",
+e_tag:"Experience",e_title:"my path, <i>briefly</i> told",e1_when:"since Nov 2025",e1_h:"Marketing",st_cap:"Instagram followers · organic · Dec–Oct",sk_shoot:"Photo & video",e1_list:"<li>Grew Instagram organically from 7k to 9k followers</li><li>I shoot the content myself: photo and video</li><li>Website in Wix Studio: menu, locations, memory game</li><li>Strategy with five content pillars, menus, promo graphics</li>",e2_when:"since Jan 2026",e2_h:"Marketing B.A., dual",e2_p:"Theory at university, practice every week in the company.",e3_when:"before",e3_h:"Philology B.A.",e3_org:"Kyiv-Mohyla Academy",e3_p:"With a minor in marketing. That is where my feel for language and tone comes from.",
+w_tag:"Work",w_title:"work you can <i>click</i>",w_click:"click me",w1_h:"Urban Ranch website",w1_p:"Multi-page site with a flip-card menu, live locations and a memory game. Click through it.",w2_h:"SUPERPAW for adidas",w2_p:"A winter boot for dogs: product concept, brand storytelling, campaign copy.",w3_h:"Instagram strategy",w3_p:"Five content pillars for Urban Ranch.",
+k_tag:"Contact",k_title:"let's make something <i>beautiful</i>",k_lead:"Write to me if you need a website, a content strategy or fresh ideas for your brand.",s1:"Wix websites",s2:"Instagram content",s3:"Branding",s4:"Campaign ideas",k_copy:"Copy email",k_copied:"Copied",k_sign:"with love, A.",n0:"Hello",n1:"Experience",n2:"Work",n3:"Contact"}};
+Object.assign(T.de,{h_tag:"Marketing · Content · Design · Websites",h_lead:"Ich mache Marken sichtbar: mit Strategie, Content, den ich selbst drehe, Designs und Websites. Aus dem Rhein-Main-Gebiet, offen für Kooperationen.",e1_h:"Marketing bei Urban Ranch",
+e1_list:"<li>Marketingstrategie entwickelt und laufend optimiert</li><li>Social-Media-Strategie für Instagram, TikTok und YouTube</li><li>Instagram organisch von 7k auf 9k Follower gebracht</li><li>Content selbst produziert: Foto, Video, Schnitt, Bildbearbeitung</li><li>Designs für Flyer, Speisekarten und Plakate</li><li>Mehrseitige Unternehmenswebsite entwickelt</li><li>Personal-Branding-Strategie und Content-Plan</li><li>Marketing-Kennzahlen ausgewertet, KI-Content eingesetzt</li>",
+e2_h:"Marketing & Sales",e2_list:"<li>Marketing-Managerin: Kundenaudits, Marketingstrategien, Auswahl digitaler Instrumente</li><li>Business Development: Angebote präsentiert, Kunden zur Zusammenarbeit geführt</li><li>Stellvertretende Leiterin: Team betreut, neue Mitarbeitende geschult</li>",
+e3_when:"Bildung",e3_h:"Studium & Zertifikate",e3_list:"<li>Duales Studium Marketing (B.A.), IU Mainz, seit 01/2026</li><li>Philologie mit Nebenfach Marketing, Kyjiw-Mohyla-Akademie, 2021–2025</li><li>Zertifikate: Marketing Customer Experience, Marketing von IT-Produkten (Genesis)</li>",
+w1_p:"Die echte mehrseitige Website mit Flip-Menü, Standorten und Memory-Game. Zum Durchklicken.",
+d_tag:"Designs",d_title:"designs, die <i>hunger</i> machen",d_lead:"Flyer, Speisekarten, Posts und Stories für Urban Ranch. Antippen zum Vergrößern.",d_shuffle:"Mischen",me_tag:"das bin ich",nd:"Designs",s3:"Design: Flyer, Menüs, Posts",s4:"Foto & Video"});
+Object.assign(T.en,{h_tag:"Marketing · Content · Design · Websites",h_lead:"I make brands visible with strategy, content I shoot myself, designs and websites. Based in the Rhine-Main area, open to collaborations.",e1_h:"Marketing at Urban Ranch",
+e1_list:"<li>Built and keep refining the marketing strategy</li><li>Social media strategy for Instagram, TikTok and YouTube</li><li>Grew Instagram organically from 7k to 9k followers</li><li>Content produced myself: photo, video, editing, retouching</li><li>Designs for flyers, menus and posters</li><li>Built a multi-page company website</li><li>Personal branding strategy and content plan</li><li>Marketing KPI analysis, AI-generated content</li>",
+e2_h:"Marketing & sales",e2_list:"<li>Marketing manager: client audits, marketing strategies, choice of digital tools</li><li>Business development: presented offers, led clients to a partnership</li><li>Deputy team lead: supported the team, trained new colleagues</li>",
+e3_when:"Education",e3_h:"Studies & certificates",e3_list:"<li>Dual study programme Marketing (B.A.), IU Mainz, since 01/2026</li><li>Philology with a minor in marketing, Kyiv-Mohyla Academy, 2021–2025</li><li>Certificates: Marketing Customer Experience, Marketing of IT Products (Genesis)</li>",
+w1_p:"The real multi-page site with a flip-card menu, locations and a memory game. Click through it.",
+d_tag:"Designs",d_title:"designs that make you <i>hungry</i>",d_lead:"Flyers, menus, posts and stories for Urban Ranch. Tap to enlarge.",d_shuffle:"Shuffle",me_tag:"that's me",nd:"Designs",s3:"Design: flyers, menus, posts",s4:"Photo & video"});
+let lang='de';
+try{lang=localStorage.getItem('lang')||'de'}catch(e){}
+if(!T[lang])lang='de';
+const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
+function setLang(l){lang=l;$$('[data-i]').forEach(e=>e.innerHTML=T[l][e.dataset.i]||'');$$('.langs button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.lang===l));document.documentElement.lang=l;try{localStorage.setItem('lang',l)}catch(e){}}
+$$('.langs button').forEach(b=>b.onclick=()=>setLang(b.dataset.lang));
+setLang(lang);
+
+/* panels */
+const stage=$('#stage'),panels=$$('.panel'),ids=['hello','weg','arbeiten','designs','kontakt'],tones=['dark','light','dark','light','dark'];
+let cur=0,busy=false;
+function mark(){$('#count').textContent=String(cur+1).padStart(2,'0')+'/05';$$('.nav button').forEach((b,i)=>b.setAttribute('aria-current',i===cur));stage.dataset.tone=tones[cur]}
+function go(i,ev){i=(i+panels.length)%panels.length;if(i===cur||busy)return;
+  const n=panels[i],o=panels[cur],r=stage.getBoundingClientRect();
+  n.style.setProperty('--x',(ev&&ev.clientX?ev.clientX-r.left:r.width/2)+'px');n.style.setProperty('--y',(ev&&ev.clientY?ev.clientY-r.top:r.height)+'px');
+  n.scrollTop=0;busy=true;n.classList.add('enter');cur=i;setTimeout(mark,300);
+  const done=()=>{o.classList.remove('active');n.classList.add('active');n.classList.remove('enter');busy=false};
+  if(matchMedia('(prefers-reduced-motion:reduce)').matches)done();else setTimeout(done,900);
+  try{history.replaceState(null,'','#'+ids[i])}catch(e){}}
+$$('[data-go]').forEach(b=>b.addEventListener('click',e=>go(+b.dataset.go,e)));
+$('#prev').onclick=e=>go(cur-1,e);$('#next').onclick=e=>go(cur+1,e);
+addEventListener('keydown',e=>{if(!$('#viewer').hidden){if(e.key==='Escape')closeV();return}if(e.key==='ArrowRight')go(cur+1);if(e.key==='ArrowLeft')go(cur-1)});
+let tx=null,ty=0;
+stage.addEventListener('touchstart',e=>{tx=e.touches[0].clientX;ty=e.touches[0].clientY},{passive:true});
+stage.addEventListener('touchend',e=>{if(tx===null||!$('#viewer').hidden)return;const dx=e.changedTouches[0].clientX-tx,dy=e.changedTouches[0].clientY-ty;if(Math.abs(dx)>70&&Math.abs(dx)>Math.abs(dy)*1.5)go(cur+(dx<0?1:-1));tx=null},{passive:true});
+const h=ids.indexOf(location.hash.slice(1));
+if(h>0){panels[0].classList.remove('active');panels[h].classList.add('active');cur=h}
+mark();
+
+/* envelope */
+const env=$('#env');
+$('#seal').onclick=()=>{env.classList.add('open');setTimeout(()=>env.classList.add('front'),650)};
+env.addEventListener('click',e=>{if(env.classList.contains('front')&&!e.target.closest('.seal')){env.classList.remove('front');setTimeout(()=>env.classList.remove('open'),500)}});
+$('.envwrap').addEventListener('pointermove',e=>{const r=env.getBoundingClientRect();env.style.setProperty('--ry',((e.clientX-r.left)/r.width-.5)*16+'deg');env.style.setProperty('--rx',-((e.clientY-r.top)/r.height-.5)*16+'deg')});
+$('.envwrap').addEventListener('pointerleave',()=>{env.style.setProperty('--ry','0deg');env.style.setProperty('--rx','0deg')});
+
+/* copy */
+$('#copy').onclick=async function(){try{await navigator.clipboard.writeText('ariannagulam@gmail.com');this.textContent=T[lang].k_copied}catch(e){const s=getSelection(),r=document.createRange();r.selectNodeContents($('#mail'));s.removeAllRanges();s.addRange(r)}};
+
+/* viewer */
+const viewer=$('#viewer'),vbody=$('#vbody');let lastFocus=null;
+function closeV(){viewer.hidden=true;$('.sheet').classList.remove('wide');vbody.innerHTML='';if(lastFocus)lastFocus.focus()}
+$('#vclose').onclick=closeV;viewer.addEventListener('click',e=>{if(e.target===viewer)closeV()});
+$$('[data-open]').forEach(b=>b.onclick=()=>{lastFocus=b;viewer.hidden=false;({ur:openUR,adi:openAdi,ig:openIG})[b.dataset.open]();$('#vclose').focus()});
+
+/* Urban Ranch — the real site, published alongside this page */
+const LIVE='https://ariannagulam.github.io/urban-ranch-portfolio/';
+function openUR(){$('#vurl').textContent='ariannagulam.github.io/urban-ranch-portfolio';$('.sheet').classList.add('wide');vbody.onclick=null;
+  vbody.innerHTML=`<iframe class="urframe" id="urf" src="ur/index.html" title="Urban Ranch Website"></iframe><p class="note">Die echte Website, direkt klickbar. <a href="${LIVE}" target="_blank" rel="noopener">Live-Website öffnen ↗</a></p>`;
+  setTimeout(()=>{const f=$('#urf');if(!f)return;let ok=false;try{ok=f.contentDocument&&f.contentDocument.body&&f.contentDocument.body.children.length>0}catch(e){}
+    if(!ok)f.outerHTML=`<div class="fallback"><h3>Urban Ranch Website</h3><p>Die Vorschau lässt sich hier nicht einbetten. Öffne die Website in einem neuen Tab:</p><div class="row"><a class="btn dark label" href="ur/index.html" target="_blank">Start</a><a class="btn dark label" href="ur/menue.html" target="_blank">Menü</a><a class="btn dark label" href="ur/standorte.html" target="_blank">Standorte</a></div></div>`},3000)}
+
+/* SUPERPAW — the six pages of the deck */
+const SP=['superpaw. three stripes. four legs. Product concept, winter 2026, by Arianna Gulam','winter hits paws first. we lace up. they go barefoot.','built for paws: soft upper, rubber wrap, cuff and strap','a sole shaped like a paw: anatomical pods, cushion where it lands, grip on ice','four ways to wear winter: burgundy, beige, black, olive','no bad weather. just bare paws. Self-initiated concept for adidas by Arianna Gulam'];
+function openAdi(){$('#vurl').textContent='superpaw · adidas concept · winter 2026';let i=0;$('.sheet').classList.add('wide');
+  vbody.onclick=null;vbody.innerHTML=`<div class="sp"><div id="ads"></div><div class="sp-ctrl"><button id="ap">← back</button><span id="ac"></span><button id="an">next →</button></div></div>`;
+  const show=d=>{i=(i+d+SP.length)%SP.length;$('#ads').innerHTML=`<img class="sp-page" style="--dir:${d<0?-1:1}" src="img/sp${i+1}.jpg" alt="${SP[i]}">`;$('#ac').textContent=(i+1)+' / '+SP.length};
+  $('#ap').onclick=()=>show(-1);$('#an').onclick=()=>show(1);$('#ads').onclick=()=>show(1);show(0)}
+
+/* designs table */
+const DES=['Story · Bestsellers','Feed · Burger Close-ups','Feed · Lil Cheese Menu','Print · Speisekarte','Feed · Bella Fries','Feed · Royal Fries'];
+const table=$('#table');let slots=DES.map((_,i)=>i);
+table.innerHTML=DES.map((d,i)=>`<button class="print" data-d="${i}"><img src="img/d${i+1}.jpg" alt="${d}" loading="lazy"><span class="label">${d}</span></button>`).join('');
+function lay(){const m=innerWidth<700,cols=m?3:6,w=m?31:18;$$('.print',table).forEach((p,k)=>{const s=slots[k],c=s%cols,r=Math.floor(s/cols);p.style.setProperty('--w',w+'%');p.style.setProperty('--l',c*((100-w)/(cols-1))+'%');p.style.setProperty('--t',(m?r*50:0)+Math.random()*10+'%');p.style.setProperty('--r',(Math.random()*14-7)+'deg')})}
+lay();addEventListener('resize',lay);
+$('#shuffle').onclick=()=>{slots.sort(()=>Math.random()-.5);lay()};
+table.onclick=e=>{const b=e.target.closest('.print');if(!b)return;lastFocus=b;const i=+b.dataset.d;viewer.hidden=false;$('.sheet').classList.remove('wide');vbody.onclick=null;$('#vurl').textContent=DES[i];vbody.innerHTML=`<img class="lightbox" src="img/d${i+1}.jpg" alt="${DES[i]}">`;$('#vclose').focus()};
+
+/* strategy */
+const PIL=[['Craft Proof','Show how it is made: the grill, the smash, the hands.'],['Trend Remix','Current formats, retold in the brand\'s voice.'],['Unscripted Proof','Real moments from the kitchen and the counter.'],['Community Voice','Guests and their stories take the stage.'],['Local Turf','Frankfurt and Darmstadt as part of the brand.']];
+function openIG(){$('#vurl').textContent='urban ranch · instagram content strategy';vbody.onclick=null;
+  vbody.innerHTML=`<div class="strat"><h3>five pillars, <i>no overlap</i></h3><div class="pillars">${PIL.map((p,i)=>`<button class="pillar" style="--i:${i}" aria-expanded="false"><span class="num">0${i+1}</span><b>${p[0]}</b><span class="t">${p[1]}</span></button>`).join('')}</div><p class="note" style="padding:0">Tap a card to open it.</p></div>`;
+  $$('.pillar',vbody).forEach(b=>b.onclick=()=>b.setAttribute('aria-expanded',b.getAttribute('aria-expanded')!=='true'))}
+</script>
+
+</body>
+</html>
