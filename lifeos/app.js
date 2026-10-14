@@ -257,7 +257,7 @@
       '<div class="days">' + strip + '</div>' +
       '<div class="h2row"><h2>' + WD_LONG[dsel.getDay()] + ', ' + dsel.getDate() + ' ' + MONTHS[dsel.getMonth()] + '</h2><button class="linkish" data-act="add-day">+ Додати</button></div>' +
       '<div class="list">' + (list.length
-        ? list.map((x) => '<div style="display:flex;align-items:center;gap:4px"><span class="time-col">' + (x.time || '—') + '</span><div style="flex:1;min-width:0">' + taskRow(x) + '</div></div>').join('')
+        ? list.map((x) => '<div style="display:flex;align-items:center;gap:4px"><span class="time-col">' + (x.time || '—') + '</span><div style="flex:1;min-width:0">' + taskRow(x, { noTime: true }) + '</div></div>').join('')
         : emptyCat('Вільний день. Мурчик радить відпочити.')) + '</div>'
     );
   }
