@@ -16,28 +16,39 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=2">
 </head>
 <body>
   <main id="app" aria-live="polite"></main>
 
+  <button class="fab-cat" id="fabCat" aria-label="Запитати Мурчика (ШІ)"></button>
+
   <nav class="tabbar" aria-label="Основна навігація">
-    <button class="tab" data-tab="today" aria-label="Сьогодні"></button>
-    <button class="tab" data-tab="tasks" aria-label="Задачі"></button>
-    <button class="tab-add" id="addBtn" aria-label="Додати задачу"></button>
-    <button class="tab" data-tab="calendar" aria-label="Календар"></button>
-    <button class="tab" data-tab="more" aria-label="Мурчик і налаштування"></button>
+    <button class="tab" data-tab="today"></button>
+    <button class="tab" data-tab="tasks"></button>
+    <button class="tab-add" id="addBtn" aria-label="Додати"></button>
+    <button class="tab" data-tab="calendar"></button>
+    <button class="tab" data-tab="money"></button>
   </nav>
 
   <div class="sheet-backdrop" id="backdrop" hidden></div>
+
+  <!-- Картка задачі -->
   <section class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sheetTitle" hidden>
     <div class="sheet-grip" aria-hidden="true"></div>
     <h2 id="sheetTitle">Нова справа</h2>
     <form id="taskForm" autocomplete="off">
       <label class="field">
         <span>Що треба зробити</span>
-        <input id="fTitle" name="title" required maxlength="120" placeholder="Наприклад: подзвонити у страхову">
+        <input id="fTitle" name="title" required maxlength="140" placeholder="Наприклад: подзвонити у страхову">
       </label>
+
+      <label class="field">
+        <span>Деталі та нотатки</span>
+        <textarea id="fNotes" rows="3" maxlength="4000" placeholder="Номер справи, адреса, що підготувати, посилання…"></textarea>
+      </label>
+
+      <button type="button" class="ai-help" id="fHelp"></button>
 
       <fieldset class="field">
         <legend>Категорія</legend>
@@ -52,11 +63,15 @@
       <fieldset class="field">
         <legend>Коли</legend>
         <div class="chips" id="fQuick"></div>
-        <div class="row2">
+        <div class="row3">
           <label class="mini"><span>Дата</span><input type="date" id="fDate"></label>
-          <label class="mini"><span>Час</span><input type="time" id="fTime"></label>
+          <label class="mini"><span>Від</span><input type="time" id="fTime"></label>
+          <label class="mini"><span>До</span><input type="time" id="fTimeEnd"></label>
         </div>
+        <p class="hint" id="fTimeHint" hidden></p>
       </fieldset>
+
+      <button type="button" class="btn ghost wide" id="fCal" hidden></button>
 
       <div class="sheet-actions">
         <button type="button" class="btn ghost danger" id="fDelete" hidden>Видалити</button>
@@ -66,8 +81,36 @@
     </form>
   </section>
 
+  <!-- Універсальна шторка: витрата, планувальник бюджету, порада -->
+  <section class="sheet" id="gsheet" role="dialog" aria-modal="true" aria-labelledby="gsheetTitle" hidden>
+    <div class="sheet-grip" aria-hidden="true"></div>
+    <div id="gsheetBody"></div>
+  </section>
+
+  <!-- Чат з Мурчиком -->
+  <section class="chat" id="chat" role="dialog" aria-modal="true" aria-label="Чат з Мурчиком" hidden>
+    <header class="chat-head">
+      <div class="chat-avatar" id="chatAvatar" aria-hidden="true"></div>
+      <div class="chat-title">
+        <b>Мурчик</b>
+        <button class="model-pill" id="modelPill" aria-haspopup="listbox"></button>
+      </div>
+      <button class="icon-btn" id="chatClear" aria-label="Почати нову розмову"></button>
+      <button class="icon-btn" id="chatClose" aria-label="Закрити чат"></button>
+    </header>
+    <div class="model-menu" id="modelMenu" role="listbox" aria-label="Модель ШІ" hidden></div>
+    <div class="chat-log" id="chatLog"></div>
+    <form class="chat-input" id="chatForm" autocomplete="off">
+      <label class="sr" for="chatText">Повідомлення Мурчику</label>
+      <textarea id="chatText" rows="1" placeholder="Напиши Мурчику…" maxlength="8000"></textarea>
+      <button type="submit" class="send" id="chatSend" aria-label="Надіслати"></button>
+    </form>
+  </section>
+
   <div class="toast" id="toast" role="status" hidden></div>
 
-  <script src="app.js"></script>
+  <script src="ai.js?v=2"></script>
+  <script src="google.js?v=2"></script>
+  <script src="app.js?v=2"></script>
 </body>
 </html>
